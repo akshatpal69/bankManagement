@@ -1,0 +1,139 @@
++-----------------+
+| Tables_in_banco |
++-----------------+
+| account         |
+| address         |
+| branch          |
+| cards           |
+| customer        |
+| fixeddeposit    |
+| loan            |
+| transactions    |
++-----------------+
+
+ACCOUNT
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| idaccount     | int         | NO   | PRI | NULL    |       |
+| accountnumber | varchar(45) | NO   | UNI | NULL    |       |
+| accounttype   | varchar(45) | NO   |     | NULL    |       |
+| branch        | varchar(45) | NO   |     | NULL    |       |
+| creditcard    | varchar(45) | YES  | UNI | NULL    |       |
+| debitcard     | varchar(45) | YES  | UNI | NULL    |       |
+| chequebook    | varchar(45) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
+ADDRESS
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| idaddress    | int         | NO   | PRI | NULL    | auto_increment |
+| house number | varchar(45) | YES  |     | NULL    |                |
+| ward number  | varchar(45) | YES  |     | NULL    |                |
+| street       | varchar(45) | YES  |     | NULL    |                |
+| landmark     | varchar(45) | YES  |     | NULL    |                |
+| village      | varchar(45) | YES  |     | NULL    |                |
+| town         | varchar(45) | NO   |     | NULL    |                |
+| post         | varchar(45) | NO   |     | NULL    |                |
+| district     | varchar(45) | NO   |     | NULL    |                |
+| state        | varchar(45) | NO   |     | NULL    |                |
+| pincode      | varchar(45) | NO   |     | NULL    |                |
+| country      | varchar(45) | NO   |     | NULL    |                |
+| customerid   | varchar(45) | NO   | PRI | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+
+BRANCH
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| idbranch    | int         | NO   | PRI | NULL    |       |
+| branchname  | varchar(45) | NO   | UNI | NULL    |       |
+| branchifsc  | varchar(45) | NO   | UNI | NULL    |       |
+| address     | varchar(45) | NO   |     | NULL    |       |
+| phonenumber | varchar(45) | NO   | UNI | NULL    |       |
+| email       | varchar(45) | NO   | UNI | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+CARDS
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| idcards           | int         | NO   | PRI | NULL    |       |
+| cardnumber        | varchar(45) | NO   | UNI | NULL    |       |
+| expiry            | varchar(45) | NO   |     | NULL    |       |
+| cvv               | varchar(45) | NO   |     | NULL    |       |
+| nameoncard        | varchar(45) | NO   |     | NULL    |       |
+| typeofcard        | varchar(45) | NO   |     | NULL    |       |
+| accountassociated | varchar(45) | NO   | PRI | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+
+CUSTOMER
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| idcustomer     | int         | NO   | PRI | NULL    |       |
+| fnamecustomer  | varchar(45) | NO   |     | NULL    |       |
+| mnamecustomer  | varchar(45) | YES  |     | NULL    |       |
+| mname2customer | varchar(45) | YES  |     | NULL    |       |
+| lnamecustomer  | varchar(45) | NO   |     | NULL    |       |
+| accountnumber  | varchar(45) | NO   | UNI | NULL    |       |
+| phone          | varchar(10) | YES  |     | NULL    |       |
+| email          | varchar(45) | YES  |     | NULL    |       |
+| address        | varchar(45) | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+
+FIXEDDEPOSIT
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| idfixed_deposit | int         | NO   |     | NULL    |       |
+| accountnumber   | varchar(45) | NO   | PRI | NULL    |       |
+| roi             | varchar(45) | NO   |     | NULL    |       |
+| perks           | varchar(45) | NO   |     | NULL    |       |
+| tenure          | varchar(45) | NO   |     | NULL    |       |
+| principalamount | varchar(45) | NO   |     | NULL    |       |
+| compoundamount  | varchar(45) | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+
+LOAN
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| idloan          | int         | NO   | PRI | NULL    |       |
+| accountnumber   | varchar(45) | NO   | PRI | NULL    |       |
+| loantype        | varchar(45) | NO   |     | NULL    |       |
+| roi             | varchar(45) | NO   |     | NULL    |       |
+| emiammount      | varchar(45) | NO   |     | NULL    |       |
+| tenure          | varchar(45) | NO   |     | NULL    |       |
+| principalamount | varchar(45) | NO   |     | NULL    |       |
+| finalamount     | varchar(45) | NO   |     | NULL    |       |
+| guarantor       | varchar(45) | NO   |     | NULL    |       |
+| numofemi        | varchar(45) | NO   |     | NULL    |       |
+| numemipaid      | varchar(45) | NO   |     | 0       |       |
++-----------------+-------------+------+-----+---------+-------+
+
+TRANSACTIONS
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| idtransactions | int         | NO   | PRI | NULL    |       |
+| receiver       | varchar(45) | NO   |     | NULL    |       |
+| amount         | varchar(45) | NO   |     | NULL    |       |
+| medium         | varchar(45) | NO   |     | NULL    |       |
+| senderaccount  | varchar(45) | NO   |     | NULL    |       |
+| remarks        | varchar(45) | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+
+
+NETBANKING
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| idcustomer       | int         | NO   |     | NULL    |       |
+| username         | varchar(45) | NO   | PRI | NULL    |       |
+| password         | varchar(45) | NO   | UNI | NULL    |       |
+| login_timestamp  | varchar(45) | YES  |     | NULL    |       |
+| logout_timestamp | varchar(45) | YES  |     | NULL    |       |
+| remarks          | varchar(45) | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
