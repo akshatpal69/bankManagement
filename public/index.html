@@ -5,20 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>employeeLOGIN</title>
-    </style>
+    <title>LandingPage</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
-    
 </head>
 
 <body>
-    <form  id="empLOGIN">
-        <input type="text" id="empid" name="empid" placeholder="employeeID" value="123">
-        <input type="password" id="emppass" name="emppass" placeholder="employeePASSWORD" value="123">
-        <input type="submit" value="Login" id="submit">
-    </form>
-    
+    <input type="button" value="logout" id="logout" style="float:right">
+  <h1>  welcome<div id="welcometext"></div></h1>
+
+    <div id="account_div">
+        <input type="button" value="account" id="account_btn">
+        <input type="button" value="debitcard" id="debitcard_btn">
+        <input type="button" value="edit_customer_details" id="edit_customer_details_btn">
+        <input type="button" value="check_balance" id="check_balance_btn">
+        <input type="button" value="freeze_account" id="freeze_account_btn">
+        <input type="button" value="delete_lost_debit_card" id="delete_lost_debit_card_btn">
+        <input type="button" value="block_lost_credit_card" id="block_lost_credit_card_btn">
+    </div>
+    <div id="fixed_deposit_div">
+        <input type="button" value="fixed_deposit" id="fixed_deposit_btn">
+    </div>
+    <div id="netbanking_div">
+        <input type="button" value="netbanking" id="netbanking_btn">
+    </div>
+    <div id="loan_div">
+        <input type="button" value="deposit_emiPayment" id="deposit_emiPayment_btn">
+
+    </div>
+    <div id="transfer_div">
+        <input type="button" value="deposit_money" id="deposit_money_btn">
+        <input type="button" value="withdraw_money" id="withdraw_money_btn">
+        <input type="button" value="transfer_money" id="transfer_money_btn">
+
+    </div>
+
+
+    <script src="./script/index.js"></script>
+
 </body>
-<script type="module" src="./app.js"></script>
+
 </html>

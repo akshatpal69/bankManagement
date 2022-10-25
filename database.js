@@ -1,6 +1,6 @@
-var mysql = require('mysql2');
+let mysql = require('mysql2');
 const ENV = require('./env.js')
-var connection = mysql.createConnection({
+let connection = mysql.createConnection({
   host: ENV.SERVER_IP,
   user: ENV.DB_USER,
   password: ENV.DB_PASS,
